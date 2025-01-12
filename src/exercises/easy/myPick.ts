@@ -34,6 +34,28 @@
 type MyPick<T, K extends keyof T> = {
     [P in K] : T[P]
 }
+
+//
+
+type TObject = {
+  title : string,
+  description : string
+  date : number
+}
+
+const obj : TObject = {
+  title : "title",
+  description : "description",
+  date : 1
+}
+
+const obj2 : MyPick<TObject, "title" | "description"> = {
+  title : "title",
+  description : "title",
+  // date : 1
+}
+
+
   
   /* _____________ Test Cases _____________ */
   import type { Equal, Expect } from '@type-challenges/utils'

@@ -21,12 +21,12 @@
 /* _____________ Your Code Here _____________ */
 
 type TupleToObject<T extends readonly (string | number | symbol)[]> = { // define a tuple
-    [K in T[number]]: K // we use T[number] to create a union of all elements in the tuple
+    [K in T[number]]: K // we use T[number] to create a union of all elements in the tuple before looping
 }
 
-type Test = {
+/*type Test = {
     [K in string | number | symbol]: K
-}
+}*/
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'

@@ -35,6 +35,26 @@ type MyReadonly<T> = {
   readonly [K in keyof T]: T[K]; // readonly is placed before the key to make each property read-only
 };
 
+/*type MyReadonly2<T, K extends keyof T> = {
+  readonly [U in K]: T[U];
+};*/
+
+//
+
+interface TObj {
+  test : string
+}
+
+const obj : MyReadonly<TObj> = {
+  test : "aaaa"
+}
+
+// obj.test = ""
+
+/*type test = {
+  readonly [0] : string
+}*/
+
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
 
